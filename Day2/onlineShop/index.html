@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Application</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+</head>
+<body>
+<div ng-app="shopApp">
+    <div ng-include="'menu.html'"></div>
+
+        <h1>Shopping Application</h1>
+        <div ng-controller="imageController">
+
+            <img width="150" height="180" usemap="#planetmap" ng-repeat="image in images" src="{{image.url}}"
+                 ng-mouseover="displayPrice(image)" ng-click="addToCart(image)"/>
+            {{ selectedPrice}}
+            <map name="planetmap">
+                <area shape="rect" coords="0,0,82,126">
+            </map>
+    </div>
+</div>
+<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/imageController.js"></script>
+</body>
+</html>

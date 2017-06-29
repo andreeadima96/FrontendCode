@@ -1,0 +1,27 @@
+<div ng-controller="UserController">
+
+    <!--TODO #7-->
+    <p>First Name: <input type="text" ng-model="user.firstName"/> </p>
+    <p>Last Name: <input type="text" ng-model="user.lastName"/> </p>
+    <p>Id(cnp): <input type="text" ng-model="user.id"/> </p>
+    <p>Age: <input type="number" ng-model="user.age"/> </p>
+
+    <p>
+        <button class="btn btn-default" ng-click="back()">Back</button>
+        <button class="btn btn-default" ng-click="resetFields()">Reset</button>
+        <button class="btn btn-default" ng-click="addUser()">Save</button>
+        <button class="btn btn-default" ng-click="ShowHide()">Show/Hide User List</button>
+
+    <table class="table table-striped">
+        <tr ng-if="show" ng-repeat="x in users">
+            <td>{{ x.firstName }}</td>
+            <td>{{ x.lastName }}</td>
+            <td>{{ x.id}}</td>
+            <td>{{ x.age}}</td>
+        </tr>
+
+    </table>
+
+    </p>
+
+</div>
