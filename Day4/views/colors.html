@@ -1,0 +1,17 @@
+<div ng-controller="ColorsController">
+    <select ng-model="myColor" ng-change="changeColor()" ng-options="color.text for color in colors "> </select>
+
+    <select ng-model="myColor4" ng-options="color.text group by color.type for color in colors "> </select>
+    <span ng-class="selectedColorClass">Some text </span>
+
+    <br>
+    <input type="text" ng-model="filterBy"/>
+    <input  type="text" ng-model="orderByinput"/>
+
+    <div ng-repeat="color in colors ">{{color.text}}</div>
+    <br>
+    <br>
+    <div ng-repeat="color in colors | filter:filterBy | orderBy:orderByinput">{{color.text}}</div>
+    <br>
+
+</div>
